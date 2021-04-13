@@ -21,11 +21,6 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: echo Info
-        if: ${{ secrets.GHCRIOTOKEN.GHCR_IO_TOKEN }}
-        run: |
-          echo ${{ github.repository_owner }}
-          echo ${{ secrets.GHCRIOTOKEN.GHCR_IO_TOKEN }}
       - name: echo Info2
         if: ${{ secrets.GHCR_IO_TOKEN }}
         run: |
