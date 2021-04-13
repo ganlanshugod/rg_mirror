@@ -21,16 +21,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: echo Info
-        env: 
-          UPER_SECRET: ${{ secrets.GHCR_IO_TOKEN }}
-        run: |
-          echo ${{ github.repository_owner }}
-          echo "$UPER_SECRET"
       - name: Login in Docker Registry
         uses: docker/login-action@v1
         with:
-          registry: ghcr.io
+          registry: registry.cn-shanghai.aliyuncs.com
           username: liuwenjie@1375792393779268
           password: ${{ secrets.WEIPU_IO_TOKEN }}
       - name: Docker pull and push
